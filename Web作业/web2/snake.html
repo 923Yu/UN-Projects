@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        #beginBox {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            margin: auto;
+            text-align: center;
+            background-image: url(./bc.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            text-align: center;
+            display: none;
+            width: 100%;
+            height: 100%;
+            /*background-image: url(./green.jpg);*/
+            background-color: rgb(197, 207, 197);
+            overflow: hidden;
+        }
+
+        .top {
+            height: 20px;
+        }
+
+        #score {
+            margin-top: 20px;
+            margin-left: -13%;
+            font-size: 20px;
+        }
+
+        #snake {
+            margin-top: 30px;
+            translate: -80px 0;
+            border: 1px solid rgb(127, 129, 127);
+            display: inline-block;
+            background-color: rgb(124, 127, 124);
+        }
+
+        #mask {
+            position: absolute;
+            left: 40%;
+            top: 85%;
+            width: 200px;
+            height: 50px;
+            display: block;
+            color: rgb(6, 17, 177);
+            font-family: '黑体';
+            text-align: center;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .btnn {
+            height: 50px;
+            width: 80px;
+            margin-bottom: 20px;
+            translate: 880px 30px;
+        }
+
+        .btn {
+            height: 40px;
+            width: 100px;
+            border-radius: 15%;
+            border: 1px rgb(122, 124, 122);
+            background-color: rgb(168, 172, 168);
+            font-size: 19px;
+            cursor: pointer;
+        }
+
+        .info {
+            position: absolute;
+            height: 70px;
+            width: 200px;
+            font-size: 50px;
+            color: black;
+            translate: 380px -270px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div id=beginBox>
+            <div id="mask">开始游戏</div>
+        </div>
+        <div class="container">
+            <div class="top">
+                <div id="score">Score: 0 历史最高分: </div>
+                <div class="btnn"><button id="upspeed" class="btn">加速</button></div>
+                <div class="btnn"> <button id="downspeed" class="btn">减速</button></div>
+                <div class="btnn"> <button id="restart" class="btn">重新开始</button></div>
+                <div class="btnn"> <button id="stop" class="btn">暂停</button></div>
+                <div class="btnn"> <button id="continue" class="btn">继续</button></div>
+                <div class="btnn"> <button id="exit" class="btn">退出游戏</button></div>
+            </div>
+            <canvas id="snake" height="400px" width="640px"></canvas>
+            <div class="info"></div>
+        </div>
+    </div>
+    <script src="snake.js"></script>
+</body>
+
+</html>
